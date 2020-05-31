@@ -35,6 +35,7 @@ header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -45,10 +46,13 @@ header nav {
 }
 
 header nav input {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
   border-radius: 20px;
   background-color: #f0f9fe;
   font-family: 'Quicksand', sans-serif;
-  width: 10em;
+  width: 15em;
   -webkit-transition: width 0.3s;
   transition: width 0.3s;
   border: 1px solid black;
@@ -57,7 +61,7 @@ header nav input {
 
 header nav input:focus {
   outline: none;
-  width: 15em;
+  width: 20em;
 }
 
 header nav li {
@@ -73,14 +77,63 @@ header nav li a {
 }
 
 header nav .shopping-cart {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
   font-size: 1.2em;
   font-weight: bold;
-  width: 4em;
-  margin-left: 2em;
-  background-image: url("/assets/shopping-cart.svg");
+  width: 3em;
+  margin-left: 1em;
+  background-image: url("../assets/shopping-cart.svg");
   background-repeat: no-repeat;
   background-position: left;
-  padding-left: 28px;
+  padding-left: 1.5em;
+}
+
+header nav .burger {
+  -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
+  width: 1.5em;
+  height: 1em;
+  position: relative;
+}
+
+header nav .burger .slice {
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: black;
+  border-radius: 2px;
+  -webkit-transition: top 0.2s;
+  transition: top 0.2s;
+}
+
+header nav .burger #slice1 {
+  top: 0;
+}
+
+header nav .burger #slice2 {
+  top: 50%;
+}
+
+header nav .burger #slice3 {
+  top: 100%;
+}
+
+header nav .mobile-menu {
+  display: none;
+  position: absolute;
+  right: 0px;
+  bottom: -2em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.burger-open {
+  top: 50% !important;
 }
 
 footer {
@@ -118,7 +171,7 @@ section h3 {
 }
 
 section#hero {
-  background-image: url(/assets/Hero.jpg);
+  background-image: url("../assets/Hero.jpg");
   background-size: cover;
   background-position: left;
   padding-top: 8em;
@@ -226,6 +279,24 @@ section#collections .grid-item .item-feature {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .burger {
+    display: none;
+  }
+  .mobile-menu {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    position: initial !important;
+    right: initial !important;
+    bottom: initial !important;
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
   }
 }
 

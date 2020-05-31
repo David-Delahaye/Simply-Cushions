@@ -11,9 +11,16 @@
         <div class="flare"></div>
         <nav>
             <input type="text" name="search" class="search" placeholder="Search...">
-            <li class="products"><a href="#collections">Collections</a></li>
-            <li class="about"><a href="#">About Us</a></li>
             <div class="shopping-cart">0</div>
+            <div class="mobile-menu">
+                <li class="products"><a href="#collections">Collections</a></li>
+                <li class="about"><a href="#">About Us</a></li>
+            </div>
+            <div class="burger">
+                <div class="slice" id="slice1"></div>
+                <div class="slice" id="slice2"></div>
+                <div class="slice" id="slice3"></div>
+            </div>
         </nav>
     </header>
 
@@ -68,6 +75,32 @@
     <footer>
         <div class="credit">Site Made By David Delahaye 2020.</div>
     </footer>
-    
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const burgerSlices = document.querySelectorAll('.slice');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        let menuOpen = false;
+
+        burger.addEventListener('click', () =>{
+            if (!menuOpen){
+            burgerSlices.forEach((slice) =>{
+                slice.classList.add('burger-open')
+                console.log(slice);
+                mobileMenu.style.display = 'flex'
+                menuOpen = true;
+            })
+            }else{
+                burgerSlices.forEach((slice) =>{
+                slice.classList.remove('burger-open')
+                console.log(slice);
+                mobileMenu.style.display = 'none'
+                menuOpen = false;
+                })
+            }
+        })
+
+
+    </script>
 </body>
 </html>

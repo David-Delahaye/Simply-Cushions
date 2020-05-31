@@ -36,21 +36,23 @@ header{
 
     nav{
         display: flex;
+        position: relative;
         justify-content: flex-end;
         align-items: center;
         padding: 1em;
 
         input{
+            order: 1;
             border-radius: 20px;
             background-color: $off-bg-col;
             font-family: 'Quicksand', sans-serif;;
-            width: 10em;
+            width: 15em;
             transition: width 0.3s;
             border:1px solid black;
             padding: 0.5em;
             &:focus{
                 outline: none;
-                width: 15em;
+                width: 20em;
             }
         }
 
@@ -66,16 +68,52 @@ header{
         }
 
         .shopping-cart{
+            order: 3;
             font-size: 1.2em;
             font-weight: bold;
-            width: 4em;
-            margin-left: 2em;
-            background-image: url("/assets/shopping-cart.svg");
+            width: 3em;
+            margin-left: 1em;
+            background-image: url("../assets/shopping-cart.svg");
             background-repeat: no-repeat;
             background-position: left;
-            padding-left: 28px;
+            padding-left: 1.5em;
+        }
+        .burger{
+            order: 4;
+            width: 1.5em;
+            height: 1em;
+            position: relative;
+            .slice{
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                background-color: black;
+                border-radius: 2px;
+                transition: top 0.2s;
+            }
+            #slice1{
+                top: 0;
+            }
+            #slice2{
+                top: 50%;
+            }
+            #slice3{
+                top:100%;
+            }
+        }
+
+        .mobile-menu{
+            display: none;
+            position: absolute;
+            right: 0px;
+            bottom: -2em;
+            flex-direction: column;
         }
     }
+}
+
+.burger-open{
+    top:50% !important;
 }
 
 footer{
@@ -107,7 +145,7 @@ section{
 }
 
 section#hero{
-    background-image: url(/assets/Hero.jpg);
+    background-image: url("../assets/Hero.jpg");
     background-size: cover;
     background-position: left;
     padding-top: 8em;
@@ -190,6 +228,17 @@ section#collections{
         .grid-item{
             flex-direction: column;
         }
+    }
+    .burger{
+        display: none;
+    }
+    .mobile-menu{
+        order: 2;
+        display: flex !important;
+        position: initial !important;
+        right: initial !important;
+        bottom: initial !important;
+        flex-direction: row !important;
     }
 }
 
