@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap");
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+em {
+  font-style: normal;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  height: 2em;
+}
+
+header .flare {
+  width: 100%;
+  height: 4px;
+  background-color: #ff5533;
+  position: absolute;
+  top: 0;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1em;
+}
+
+header nav input {
+  border-radius: 20px;
+  background-color: #f0f9fe;
+  font-family: 'Quicksand', sans-serif;
+  width: 10em;
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
+  border: 1px solid black;
+  padding: 0.5em;
+}
+
+header nav input:focus {
+  outline: none;
+  width: 15em;
+}
+
+header nav li {
+  list-style: none;
+  margin-left: 1em;
+}
+
+header nav li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+header nav .shopping-cart {
+  font-size: 1.2em;
+  font-weight: bold;
+  width: 4em;
+  margin-left: 2em;
+  background-image: url("/assets/shopping-cart.svg");
+  background-repeat: no-repeat;
+  background-position: left;
+  padding-left: 28px;
+}
+
+footer {
+  height: 20vh;
+  padding: 5em;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .credit {
+  color: white;
+  font-size: 2em;
+}
+
+section {
+  padding: 3em;
+  height: 100%;
+  width: 100%;
+}
+
+section h1 {
+  padding-bottom: 0.2em;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+section h3 {
+  font-size: 1.1em;
+  font-weight: lighter;
+}
+
+section#hero {
+  background-image: url(/assets/Hero.jpg);
+  background-size: cover;
+  background-position: left;
+  padding-top: 8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section#hero em {
+  color: #ff5533;
+}
+
+section#hero h3 {
+  width: 40%;
+  min-width: 15em;
+}
+
+section#hero .primary {
+  display: inline-block;
+  border-radius: 17px;
+  border: 4px solid #ff5533;
+  color: #ff5533;
+  text-decoration: none;
+  padding: 1em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 7em;
+}
+
+section#collections {
+  background-color: #fef3f0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+section#collections h3 {
+  max-width: 40em;
+  margin-bottom: 2em;
+}
+
+section#collections em {
+  color: #33b8ff;
+}
+
+section#collections .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+}
+
+section#collections .grid-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 3em;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+section#collections .grid-item .item-image {
+  border-radius: 12%;
+  width: 60%;
+}
+
+section#collections .grid-item .item-desc {
+  width: 60%;
+  padding: 1em;
+}
+
+section#collections .grid-item .item-title {
+  font-size: 1.4em;
+}
+
+section#collections .grid-item .item-feature {
+  font-size: 1em;
+  margin-left: 1em;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1080px) {
+  html {
+    font-size: 18px;
+  }
+  section#collections .grid {
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+  }
+  section#collections .grid .grid-item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (min-width: 1600px) {
+  html {
+    font-size: 20px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
