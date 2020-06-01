@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 $main-col:hsl(10,100%,60%);
-$main-bg-col:hsl(10,90%,97%);
+$main-bg-col:hsl(10,90%,93%);
 $off-col:hsl(201,100%,60%);
-$off-bg-col:hsl(201,90%,97%);
+$off-bg-col:hsl(201,90%,93%);
 
 html,body{
     height: 100%;
@@ -22,7 +22,8 @@ em{
 }
 
 header{
-    position: absolute;
+    position: fixed;
+    z-index: 100;
     width: 100%;
     height: 2em;
 
@@ -32,6 +33,7 @@ header{
         background-color: $main-col;
         position: absolute;
         top: 0;
+        z-index: 100;
     }
 
     nav{
@@ -40,11 +42,12 @@ header{
         justify-content: flex-end;
         align-items: center;
         padding: 1em;
+        background-color: rgba(255, 255, 255, 0.555);
 
         input{
             order: 1;
             border-radius: 20px;
-            background-color: $off-bg-col;
+            background-color: transparent;
             font-family: 'Quicksand', sans-serif;;
             width: 15em;
             transition: width 0.3s;
@@ -58,7 +61,7 @@ header{
 
         li{
             list-style: none;
-            margin-left: 1em;
+            padding: 0.5em;
             a{
                 text-decoration: none;
                 color: black;
@@ -106,8 +109,10 @@ header{
             display: none;
             position: absolute;
             right: 0px;
-            bottom: -2em;
+            bottom: -5em;
             flex-direction: column;
+            text-align: right;
+            background-color:rgba(255, 255, 255, 0.671);
         }
     }
 }
@@ -130,6 +135,7 @@ footer{
 
 section{
     padding: 3em;
+    padding-top: 6em;
     height: 100%;
     width: 100%;
     h1{
@@ -137,8 +143,17 @@ section{
         font-size: 2.5em;
         font-weight: bold;
     }
-
+    h2{
+        padding-bottom: 0.2em;
+        font-size: 1.8em;
+        font-weight: bold;
+    }
     h3{
+        font-size: 1.4em;
+        padding-bottom: 0.2em;
+        font-weight: bold;
+    }
+    h4{
         font-size: 1.1em;
         font-weight: lighter;
     }
@@ -147,7 +162,7 @@ section{
 section#hero{
     background-image: url("../assets/Hero.jpg");
     background-size: cover;
-    background-position: left;
+    background-position: right;
     padding-top: 8em;
     display: flex;
     flex-direction: column;
@@ -156,7 +171,7 @@ section#hero{
         color: $main-col;
     }
 
-    h3{
+    h4{
         width: 40%;
         min-width: 15em;
     }
@@ -171,14 +186,20 @@ section#hero{
         width: fit-content;
         font-size: 1.5em;
         font-weight: bold;
-        margin-top: 7em;
+        margin-top: 5em;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.425);
+        background-color: $off-bg-col;
     }
 }
 
 section#collections{
     background-color: $main-bg-col;
     height: fit-content;
-    h3{
+    min-height: 100vh;
+    h2,h4{
+        margin-left: 2rem;
+    }
+    h4{
         max-width: 40em;
         margin-bottom: 2em;
     }
@@ -193,22 +214,24 @@ section#collections{
 
     .grid-item{
         display: flex;
+        transition: transform 1s;
         margin-bottom: 3em;
-        align-items: flex-start;
+        align-items: center;
         .item-image{
             border-radius: 12%;
-            width: 60%;
+            width: 70%;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.418);
         }
         .item-desc{
             width: 60%;
             padding: 1em;
         }
-        .item-title{
-            font-size: 1.4em;
-        }
         .item-feature{
             font-size: 1em;
             margin-left: 1em;
+        }
+        &:hover{
+            transform: scale(1.1);
         }
     }
 }
@@ -224,7 +247,7 @@ section#collections{
         font-size: 18px;
     }
     section#collections .grid{
-        grid-template-columns: auto auto auto;
+        grid-template-columns: repeat(3,33%);
         .grid-item{
             flex-direction: column;
         }
@@ -239,6 +262,7 @@ section#collections{
         right: initial !important;
         bottom: initial !important;
         flex-direction: row !important;
+        background-color: transparent !important;
     }
 }
 
